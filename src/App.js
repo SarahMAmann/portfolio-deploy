@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import signaturetitle from './signaturetitleEDIT.png'
 import './App.css';
+import Nav from './Nav';
+import Work from './Work';
+import Title from './Title';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          CHANGED
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <body className="App-header">
+        <Route path="/" exact component={Title} />
+        <Route path="/" exact component={Nav} />
+        <Route path="/work" component={Work}/>
+      </body>
     </div>
+    </Router>
   );
 }
 
